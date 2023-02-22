@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Join </title>
+<link rel="stylesheet" href="css/all.main.css" >
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/framework.css" >
+<link rel="stylesheet" href="css/artiste.css" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+</style>
+<style> @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@400;500;600;700;800&display=swap'); </style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Caramel&display=swap');
+</style>
+<style>
+  :root {
+    --color-one:#170C17;
+  --color-two: #f3bd66;
+  --color-three: #0d69d5;
+  --color-four: #f59e0b;
+  --color-five: #c8b29ec9;
+  --color-six: #634F57;
+  --color-seven: #382838;
+  --color-eight:#303a2b;
+  --color-nine:#FEAF2C;
+  --main-transition: 0.3s;
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  --section-background: #ececec;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Open Sans", sans-serif;;
+}
+body{
+  direction: ltr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #444;
+}
+.container {
+  position: relative;
+  width: 70vw;
+  height: 80vh;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right bottom, #33313d, #3a3341, #423644,
+    #4b3845, #533a46, #553d4a, #563f4d, #584251,
+    #524657, #4b4a5a, #464d5b, #44505a);
+    background-size: cover;
+  z-index: 6;
+  transform: translateX(100%);
+  transition: 1s ease-in-out;
+}
+
+.signin-signup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: reverse;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 5;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  min-width: 238px;
+  padding: 0 10px;
+}
+
+form.sign-in-form {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  transition-delay: 1s;
+}
+
+form.sign-up-form {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  transition-delay: 1s;
+}
+
+.title {
+  font-size: 35px;
+  color: #170C17;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 100%;
+  height: 50px;
+  background: #f0f0f0;
+  margin: 10px 0;
+  border: 2px solid #170C17;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-field i {
+  flex: 1;
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+}
+
+.input-field input {
+  flex: 5;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+}
+
+.btn {
+  width: 160px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  background:#170C17;
+  color: #fff;
+  font-weight: 600;
+  margin: 10px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #463146 ;
+}
+
+.social-text {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  border: 1px solid #444;
+  border-radius: 50px;
+  margin: 0 5px;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #170C17;
+  border-color: #170C17;
+  background-color: #c8b29e9d ;
+}
+
+.panels-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: reverse;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-around;
+  width: 35%;
+  min-width: 238px;
+  padding: 0 10px;
+  text-align: center;
+  z-index: 6;
+}
+
+.left-panel {
+  pointer-events: none;
+}
+
+.content {
+  color: #c8b29e9d;
+  transition: 1.1s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+.panel h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.panel p {
+  font-size: 15px;
+  padding: 10px 0;
+}
+
+.image {
+  width: 85%;
+  transition: 1.1s ease-in-out;
+  transition-delay: 0.4s;
+}
+img {
+  width: 150px;
+  height: 170px;
+}
+
+.left-panel .image,
+.left-panel .content {
+  transform: translateX(-200%);
+}
+
+.right-panel .image,
+.right-panel .content {
+  transform: translateX(0);
+}
+
+.account-text {
+  display: none;
+}
+
+
+/*Animation*/
+
+.container.sign-up-mode::before {
+  transform: translateX(0);
+}
+
+.container.sign-up-mode .right-panel .image,
+.container.sign-up-mode .right-panel .content {
+  transform: translateX(200%);
+}
+
+.container.sign-up-mode .left-panel .image,
+.container.sign-up-mode .left-panel .content {
+  transform: translateX(0);
+}
+
+.container.sign-up-mode form.sign-in-form {
+  opacity: 0;
+}
+
+.container.sign-up-mode form.sign-up-form {
+  opacity: 1;
+}
+
+.container.sign-up-mode .right-panel {
+  pointer-events: none;
+}
+
+.container.sign-up-mode .left-panel {
+  pointer-events: all;
+}
+
+
+/*Responsive*/
+
+@media (max-width:779px) {
+  .container {
+      width: 100vw;
+      height: 100vh;
+  }
+}
+
+@media (max-width:635px) {
+  .container::before {
+      display: none;
+  }
+  form {
+      width: 80%;
+  }
+  form.sign-up-form {
+      display: none;
+  }
+  .container.sign-up-mode2 form.sign-up-form {
+      display: flex;
+      opacity: 1;
+  }
+  .container.sign-up-mode2 form.sign-in-form {
+      display: none;
+  }
+  .panels-container {
+      display: none;
+  }
+  .account-text {
+      display: initial;
+      margin-top: 30px;
+  }
+}
+
+@media (max-width:320px) {
+  form {
+      width: 90%;
+  }
+}
+
+</style>
+<script defer src="javascript/joinPage.js"></script> 
+    </head>
+    <body >
+
+        <div class="container">
+          <!-- Start signin and sign up -->
+           <div class="signin-signup">
+          <!-- Start form one -->
+              <form action="" class="sign-in-form">
+                      <h2 class="title"> Login</h2>
+                      <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" placeholder="Username ">
+                      </div>
+                      <div class="input-field">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" placeholder=" Password">
+                      </div>
+                      <input type="submit" value="login" class="btn">
+                      <p class="social-text">  Or login with a social media account     </p>
+                      <div class="social-media">
+                      <a href="#" class="social-icon">
+                          <i class="fab fa-facebook"></i>
+                      </a>
+                      <a href="" class="social-icon">
+                          <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="" class="social-icon">
+                          <i class="fab fa-google"></i>
+                      </a>
+                      </div>
+                      <p class="account-text"> You have no account?<a href="#" id="sign-up-btn2"> Join</a></p>
+              </form>
+          <!-- End form one -->
+          <!-- Start form two -->
+              <form action="" class="sign-up-form">
+                      <h2 class="title">  Join </h2>
+                      <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" placeholder="Username ">
+                      </div>
+                      <div class="input-field">
+                      <i class="fas fa-envelope"></i>
+                      <input type="text" placeholder="Email  ">
+                      </div>
+                      <div class="input-field">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" placeholder="Password ">
+                      </div>
+                      <input type="submit" value=" Create an account" class="btn">
+                      <p class="social-text"> Enter with a social media account        </p>
+                      <div class="social-media">
+                      <a href="#" class="social-icon">
+                      <i class="fab fa-facebook"></i>
+                      </a>
+                      <a href="" class="social-icon">
+                      <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="" class="social-icon">
+                      <i class="fab fa-google"></i>
+                      </a>  
+                      </div>
+                      <p class="account-text">     Already have an account?<a href="#" id="sign-in-btn2"> Login </a></p>
+              </form>
+          <!-- End form two -->
+          <!-- start signin and sign up -->
+          </div>
+          <!-- End signin and sign up -->
+          <!-- Start panels container -->
+              <div class="panels-container">
+                  
+                  <div class="panel left-panel">
+          <div class="content">
+          <h3> Are you already a member?</h3>
+          <p> Glad to see you here again! login to start using your account </p>
+          <button class="btn" id="sign-in-btn"> Login </button>
+          </div>
+          <img src="images/joinpic.png" alt="" class="image">
+                  </div>
+          
+                  <div class="panel right-panel">
+          <div class="content">
+          <h3> Are you a new user?</h3>
+          <p> Create a new account and start sharing your photos with the world</p>
+          <button class="btn" id="sign-up-btn"> Join </button>
+          </div>
+          <div id="myjoinpic">
+          <img src="images/funny-3d-illustration-cartoon-teenage-girl-transformed.png" alt="" class="image" id="myjoinimage">
+        </div>
+                  </div>
+          
+              </div>
+          <!-- End panels container -->
+          </div>
+         
+
+    </body>
+</html>

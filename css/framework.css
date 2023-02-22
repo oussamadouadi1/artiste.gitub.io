@@ -1,0 +1,21 @@
+/* colors */
+.kombuGreen {
+    color: #303a2b;
+}
+.turquoise {
+    color: #58FCEC;
+}
+.pale {
+    color: #A2C7E5;
+}
+.languid {
+    color: #C1BDDB;
+}
+.carnation {
+    color: #FF99C9;
+}
+
+/* colors */
+/* fonts */
+.cairo { font-family: 'Cairo', sans-serif; }
+.roboto {font-family: 'Roboto', sans-serif; }
